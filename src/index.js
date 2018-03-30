@@ -194,7 +194,8 @@ export default class extends Component {
 
   componentWillReceiveProps (nextProps) {
     if (!nextProps.autoplay && this.autoplayTimer) clearTimeout(this.autoplayTimer)
-    this.setState(this.initState(nextProps, this.props.index !== nextProps.index))
+    // Commenting this out fixes issue where setting loop to true loads the last slide first
+    // this.setState(this.initState(nextProps, this.props.index !== nextProps.index))
   }
 
   componentDidMount () {
